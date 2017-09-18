@@ -1,3 +1,4 @@
+import { AngularFireDatabaseModule } from 'angularfire2/database/database.module';
 import { MyShopCreatePage } from './../pages/my-shop-create/my-shop-create';
 import { MyShopListPage } from './../pages/my-shop-list/my-shop-list';
 import { FIREBASE_CREDENCIAIS } from './firebase.credenciais';
@@ -22,7 +23,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     //Inicializando angular fire credenciais para dashboard
-    AngularFireModule.initializeApp(FIREBASE_CREDENCIAIS)
+    AngularFireModule.initializeApp(FIREBASE_CREDENCIAIS),
+    //Importar angularfirebase para iteração com a base de dados
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

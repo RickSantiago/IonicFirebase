@@ -6,13 +6,36 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="blueMarine">
     <ion-title>Cadastrar Item</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-
+    <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input type="text" [(ngModel)] = "itemCompra.nome"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-label floating>Quantidade</ion-label>
+        <ion-input type="number" [(ngModel)] = "itemCompra.quantidade"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-label floating>Preço</ion-label>
+        <ion-input type="number" [(ngModel)] = "itemCompra.preco"></ion-input>
+    </ion-item>
+    <br> <br> <br>
+    <ion-item>
+        <ion-label >Data da Compra</ion-label>
+        <ion-input type="date" [(ngModel)] = "itemCompra.dataCompra"></ion-input>
+    </ion-item>
+  <br>
+    <div padding end>
+        <button ion-button color="primary" large block (click)="cadastrarItem(itemCompra)"> 
+          <ion-icon name="md-cart"> Inserir </ion-icon>
+        </button>
+    </div>
 </ion-content>

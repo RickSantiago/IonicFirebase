@@ -1,12 +1,6 @@
+import { MyShopCreatePage } from './../my-shop-create/my-shop-create';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the MyShopListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -18,8 +12,9 @@ export class MyShopListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MyShopListPage');
+  criarLista(){
+    //Ir ate a pagina de criacao de item
+    this.navCtrl.push(MyShopCreatePage)
   }
 
 }
