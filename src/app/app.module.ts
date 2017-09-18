@@ -1,3 +1,4 @@
+
 import { AngularFireDatabaseModule } from 'angularfire2/database/database.module';
 import { MyShopCreatePage } from './../pages/my-shop-create/my-shop-create';
 import { MyShopListPage } from './../pages/my-shop-list/my-shop-list';
@@ -11,13 +12,15 @@ import {AngularFireModule} from 'angularfire2'
 import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CreateListShopPage } from '../pages/create-list-shop/create-list-shop';
 
 
 @NgModule({
   declarations: [
     MyApp,
     MyShopListPage,
-    MyShopCreatePage
+    MyShopCreatePage,
+    CreateListShopPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     MyShopListPage,
-    MyShopCreatePage
+    MyShopCreatePage,
+    CreateListShopPage
   ],
   providers: [
     StatusBar,

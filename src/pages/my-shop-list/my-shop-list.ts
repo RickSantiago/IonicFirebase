@@ -1,6 +1,6 @@
-import { MyShopCreatePage } from './../my-shop-create/my-shop-create';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CreateListShopPage } from '../create-list-shop/create-list-shop';
 
 @IonicPage()
 @Component({
@@ -14,7 +14,7 @@ export class MyShopListPage {
 
   criarLista(){
     //Ir ate a pagina de criacao de item
-    this.navCtrl.push(MyShopCreatePage)
+    this.navCtrl.push(CreateListShopPage)
   }
 
 }
