@@ -12,6 +12,23 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content style="background-color: rgba(23, 87, 124, 0.979)">
+    <ion-list style="background-color: rgba(23, 87, 124, 0.979)">
+        <ion-item style="background-color: rgba(23, 87, 124, 0.979)" *ngFor="let item of shopListRef$ | async" (click)="selecionaListaItem(item)">
+            <ion-card>
+                <ion-card-content>
+                    <h2>
+                        <ion-icon name="cart" item-start></ion-icon> Nome: {{item.nomeLista}}
+                    </h2>
+                    <h3>
+                        <ion-icon name="ios-basket" item-start></ion-icon> Mercado: {{item.nomeMercado}}
+                    </h3>
+                    <h3>
+                        <ion-icon name="md-calendar" item-start></ion-icon> Data: {{item.dataLista | date: 'dd/MM/yyyy'}}
+                    </h3>
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
 
+    </ion-list>
 </ion-content>

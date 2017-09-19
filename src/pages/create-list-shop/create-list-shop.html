@@ -16,22 +16,22 @@
 <ion-content padding>
     <br>
     <ion-item>
-        <ion-label floating>Nome</ion-label>
-        <ion-input type="text" [(ngModel)]=""></ion-input>
+        <ion-label floating>Nome da Lista</ion-label>
+        <ion-input type="text" name="nomeLista" [(ngModel)]="itemLista.nomeLista"></ion-input>
     </ion-item>
-    <br> <br> <br>
+    <br>
     <ion-item>
-        <ion-label floating>Nome Mercado</ion-label>
-        <ion-input type="text" [(ngModel)]=""></ion-input>
+        <ion-label floating>Nome do Mercado</ion-label>
+        <ion-input type="text" name="nomeMercado" [(ngModel)]="itemLista.nomeMercado"></ion-input>
     </ion-item>
-    <br> <br> <br>
+    <br> <br><br>
     <ion-item>
-        <ion-label>Data da Compra</ion-label>
-        <ion-input type="date" [(ngModel)]=""></ion-input>
+        <ion-label>Data da lista</ion-label>
+        <ion-input type="date" name="dataLista" [(ngModel)]="itemLista.dataLista"></ion-input>
     </ion-item>
     <br>
     <div padding end>
-        <button ion-button color="primary" large block (click)=""> 
+        <button ion-button color="primary" large block (click)="cadastrarLista(itemLista)"> 
           <ion-icon name="md-cart"> Inserir </ion-icon>
         </button>
     </div>
