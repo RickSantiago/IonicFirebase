@@ -1,6 +1,6 @@
 import { MyShopItem } from '../../models/myshop-item/shop-item.interface';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { IonicPage, Platform, NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { CreateListShopPage } from '../create-list-shop/create-list-shop';
 import { FirebaseListObservable } from 'angularfire2/database/firebase_list_observable';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -18,7 +18,8 @@ export class MyShopListPage {
   constructor(public navCtrl: NavController, 
   public navParams: NavParams,
   private baseDados: AngularFireDatabase,
-  private actionSheetController: ActionSheetController) {
+  private actionSheetController: ActionSheetController,
+  public platform: Platform) {
 
     this.shopListRef$ = this.baseDados.list('my-shop-list');
     // this.shopListRef$.subscribe(data => console.log)
@@ -33,9 +34,11 @@ export class MyShopListPage {
     
     this.actionSheetController.create({
       title: `${listaItem.nomeLista}`,
+      cssClass: 'action-sheets-basic-page',
       buttons: [
         {
           text: 'Editar',
+          icon: 'md-create',
           handler: () => {
             // Editar lista futuramente
             console.log("usuario clicou no botao editar")
@@ -44,6 +47,7 @@ export class MyShopListPage {
         {
           text: 'Excluir',
           role: 'destructive',
+          icon: 'trash',
           handler: () => {
             //deletar lista
             this.shopListRef$.remove(listaItem.$key)
@@ -53,6 +57,7 @@ export class MyShopListPage {
         {
           text: 'Cancelar',
           role: 'cancel',
+          icon: 'close',
           handler: () => {
             //deletar lista
             console.log("usuario clicou no botao cancelar")

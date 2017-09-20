@@ -12,20 +12,32 @@
 </ion-header>
 
 
-<ion-content style="background-color: rgba(23, 87, 124, 0.979)">
-    <ion-list style="background-color: rgba(23, 87, 124, 0.979)">
-        <ion-item style="background-color: rgba(23, 87, 124, 0.979)" *ngFor="let item of shopListRef$ | async" (click)="selecionaListaItem(item)">
+<ion-content style="background-color: rgba(23, 85, 124, 0.979)">
+    <ion-list style="background-color: rgba(23, 85, 124, 0.979)">
+        <ion-item style="background-color: rgba(23, 85, 124, 0.979)" *ngFor="let item of shopListRef$ | async">
             <ion-card>
                 <ion-card-content>
-                    <h2>
-                        <ion-icon name="cart" item-start></ion-icon> Nome: {{item.nomeLista}}
-                    </h2>
+                    <div>
+                        <h2>
+                            <ion-buttons end>
+                                <button clear ion-button icon-only (click)="selecionaListaItem(item)">
+                                     <ion-icon right (click)="selecionaListaItem(item)"  name="more"></ion-icon>
+                                </button>
+                            </ion-buttons>
+
+                            <ion-icon name="cart" item-start></ion-icon> Nome: {{item.nomeLista }} {{item.dataLista | date: 'MMMM'}}
+                        </h2>
+                    </div>
+
                     <h3>
                         <ion-icon name="ios-basket" item-start></ion-icon> Mercado: {{item.nomeMercado}}
                     </h3>
                     <h3>
                         <ion-icon name="md-calendar" item-start></ion-icon> Data: {{item.dataLista | date: 'dd/MM/yyyy'}}
                     </h3>
+                    <ion-fab bottom right end>
+                        <button (click)="adicionaItem()" ion-fab mini><ion-icon name="md-search"></ion-icon></button>
+                    </ion-fab>
                 </ion-card-content>
             </ion-card>
         </ion-item>

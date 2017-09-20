@@ -13,6 +13,7 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CreateListShopPage } from '../pages/create-list-shop/create-list-shop';
+import { HomePage } from '../pages/home/home';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CreateListShopPage } from '../pages/create-list-shop/create-list-shop';
     MyApp,
     MyShopListPage,
     MyShopCreatePage,
-    CreateListShopPage
+    CreateListShopPage,
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { CreateListShopPage } from '../pages/create-list-shop/create-list-shop';
     MyApp,
     MyShopListPage,
     MyShopCreatePage,
-    CreateListShopPage
+    CreateListShopPage,
+    HomePage
   ],
   providers: [
     StatusBar,
